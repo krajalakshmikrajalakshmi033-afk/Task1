@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    header p {
+      font-style: italic;
+      color: #ddd;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    #about img {
+      width: 150px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    #skills ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #skills li {
+      background: #eee;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .project {
+      margin-bottom: 30px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: #555;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      #skills ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Rajalakshmi</h1>
+    <p>Web Developer | Designer | Problem Solver</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <img src="raji pic.jpeg" alt="">
+    <h2>About Me</h2>
+    <p>Hello! I’m a passionate developer with experience in building responsive websites and applications. I enjoy solving problems and creating user-friendly designs. My focus is on clean code, modern design, and delivering value through technology.</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML & CSS</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>Node.js</li>
+      <li>UI/UX Design</li>
+      <li>Responsive Web Design</li>
+    </ul>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <img src="project1.jpg" alt="E-commerce Website">
+      <h3>E-commerce Website</h3>
+      <p>Developed a responsive online store with product listings, shopping cart, and secure checkout using HTML, CSS, and JavaScript.</p>
+    </div>
+    <div class="project">
+      <img src="project2.jpg" alt="Portfolio Website">
+      <h3>Portfolio Website</h3>
+      <p>Designed and built a personal portfolio showcasing projects, skills, and resume download functionality. Focused on clean design and accessibility.</p>
+    </div>
+    <div class="project">
+      <img src="project3.jpg" alt="Task Manager App">
+      <h3>Task Manager App</h3>
+      <p>Created a task management application with add, edit, and delete features using JavaScript. Implemented local storage for data persistence.</p>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume">
+    <h2>Resume</h2>
+    <a href="Resume.pdf" download>Download My Resume (PDF)</a>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: krajalakshmikrajalakshmi033@gmail.com</p>
+    <p>Phone: +91 9856748342</p>
+    <form id="contactForm">
+      <label for="email">Your Email:</label><br>
+      <input type="email" id="email" required><br><br>
+      <label for="message">Message:</label><br>
+      <textarea id="message" rows="4" required></textarea><br><br>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Rajalakshmi. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Smooth scrolling for nav links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Contact form handler
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      alert("Thank you for reaching out!\nEmail: " + email + "\nMessage: " + message);
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
